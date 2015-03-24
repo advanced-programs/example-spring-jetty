@@ -1,4 +1,4 @@
-package cc.pp.example.config;
+package zx.soft.example.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -9,8 +9,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @EnableWebMvc
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("images/**").addResourceLocations("images/");
-    }
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("images/**").addResourceLocations("images/");
+	}
+
 }

@@ -1,4 +1,4 @@
-package cc.pp.example.controller;
+package zx.soft.example.controller;
 
 import java.util.Collection;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import cc.pp.example.dao.UserDao;
-import cc.pp.example.model.User;
+import zx.soft.example.dao.UserDao;
+import zx.soft.example.model.User;
 
 @Controller
 @RequestMapping("/users")
@@ -26,8 +26,7 @@ public class UserController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public @ResponseBody
-	User addUser(@RequestBody User user, HttpServletResponse response) {
+	public @ResponseBody User addUser(@RequestBody User user, HttpServletResponse response) {
 		long uid = userDao.addUser(user);
 		response.setHeader("Location", "/users/" + uid);
 		return user;
@@ -41,14 +40,13 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/{uid}", method = RequestMethod.GET)
-	public @ResponseBody
-	User getUser(@PathVariable long uid) {
+	public @ResponseBody User getUser(@PathVariable long uid) {
 		return userDao.getUser(uid);
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody
-	Collection<User> getUsers() {
+	public @ResponseBody Collection<User> getUsers() {
 		return userDao.getUsers();
 	}
+
 }

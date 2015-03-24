@@ -1,16 +1,16 @@
-package cc.pp.example.dao;
+package zx.soft.example.dao;
 
 import java.util.Collection;
 import java.util.TreeMap;
 
 import org.springframework.stereotype.Repository;
 
-import cc.pp.example.model.User;
+import zx.soft.example.model.User;
 
 @Repository
 public class UserDao {
 
-	private final TreeMap<Long, User> users = new TreeMap<Long, User>();
+	private final TreeMap<Long, User> users = new TreeMap<>();
 
 	private static long index = 3;
 

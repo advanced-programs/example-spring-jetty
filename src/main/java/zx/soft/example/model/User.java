@@ -1,5 +1,13 @@
-package cc.pp.example.model;
+package zx.soft.example.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
+import zx.soft.example.utils.CustomObjectSerializer;
+
+@XmlRootElement
+@JsonSerialize(using = CustomObjectSerializer.class)
 public class User {
 
 	private long id;
